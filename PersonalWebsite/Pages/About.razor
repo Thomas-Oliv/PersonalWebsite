@@ -1,0 +1,43 @@
+﻿@page "/about"
+@using MatBlazor
+@using Data
+@using Microsoft.Extensions.Configuration
+@inject IDataAccess _data
+@inject IConfiguration _config
+
+<MatTabGroup>
+    <MatTab>
+        <LabelContent>
+            <span class="oi oi-person" aria-hidden="true"></span> About Me
+        </LabelContent>
+        <ChildContent>
+            Primary Content
+        </ChildContent>
+    </MatTab>
+    <MatTab  >
+        <LabelContent >
+            <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
+        </LabelContent>
+        <ChildContent>
+            @if (experiences.Count > 0)
+            {
+                foreach (var experience in experiences)
+                {
+                    <p>Experience.Title</p>
+                }
+            }
+            else
+            {
+                <h2>No work experiences found</h2>
+            }
+        </ChildContent>
+    </MatTab>
+    <MatTab Label="Projects">
+        <LabelContent>
+            <span class="oi oi-folder" aria-hidden="true"></span> Projects
+        </LabelContent>
+        <ChildContent>
+            Third Content
+        </ChildContent>
+    </MatTab>
+</MatTabGroup>
