@@ -1,0 +1,12 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+
+.text-default-color {
+    color: rgb(0, 107, 201);
+}
+.background-default-color {
+    background-color: rgb(0, 107, 201);
+}
+.border-default-color {
+    border: rgb(0, 107, 201);
+}
