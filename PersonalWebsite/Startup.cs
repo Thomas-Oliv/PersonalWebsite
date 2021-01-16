@@ -14,6 +14,7 @@ using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Icons.FontAwesome;
 using MatBlazor;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace PersonalWebsite
 {
@@ -32,8 +33,7 @@ namespace PersonalWebsite
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>()
-                .AddBlazorise(options =>
+            services.AddBlazorise(options =>
                 {
                     options.ChangeTextOnKeyPress = true; // optional
                 })
@@ -71,6 +71,12 @@ namespace PersonalWebsite
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseAuthentication();
         }
     }
 }

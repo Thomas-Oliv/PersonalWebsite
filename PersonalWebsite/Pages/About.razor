@@ -11,7 +11,10 @@
             <span class="oi oi-person" aria-hidden="true"></span> About Me
         </LabelContent>
         <ChildContent>
-            Primary Content
+            <div class="pt-3 text-center">
+                <MatDivider></MatDivider>
+                <h5 class="pt-2">Sorry! Theres nothing here yet :)</h5>
+            </div>
         </ChildContent>
     </MatTab>
     <MatTab  >
@@ -19,17 +22,110 @@
             <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
         </LabelContent>
         <ChildContent>
-            @if (experiences.Count > 0)
-            {
-                foreach (var experience in experiences)
-                {
-                    <p>Experience.Title</p>
-                }
-            }
-            else
-            {
-                <h2>No work experiences found</h2>
-            }
+            <div class="mat-layout-grid">
+                <MatAccordion Class="mt-3" Multi="true">
+                    <MatExpansionPanel Expanded="true">
+                        <MatExpansionPanelSummary Class="bg-dark rounded-top text-light">
+                            <MatExpansionPanelHeader>.Net/C# Software Developer</MatExpansionPanelHeader>
+                            <MatExpansionPanelSubHeader>
+                                September 2020 - December 2020
+                            </MatExpansionPanelSubHeader>
+                        </MatExpansionPanelSummary>
+                        <MatExpansionPanelDetails>
+                            <MatList SingleSelection="true" TwoLine="true">
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Managed and coordinated ERP data migration and implementation.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Worked with colleagues in collecting, structuring, and organizing data for migration.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Researched and developed an industrial data logging device.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Using a descision matrix, my colleague and I determined the most optimal design for a PLC data collection module and presented our findings to management for approval.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Designed several C# applications for use within the ERP system.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>These applications included an API which allowed us to create a custom data migration tool. Customizations were also made to the ERP system to suit the Company's needs.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Created dozens of reports using SSRS.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Designed custom reports with complex queries for use within the ERP system such as PO forms, CUSMA reports, and inventory management.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                            </MatList>
+                        </MatExpansionPanelDetails>
+                    </MatExpansionPanel>
+                    <MatExpansionPanel Expanded="true">
+                        <MatExpansionPanelSummary Class="bg-dark rounded-top text-light">
+                            <MatExpansionPanelHeader>.Net/C# Software Developer</MatExpansionPanelHeader>
+                            <MatExpansionPanelSubHeader>
+                                January 2020 - May 2020
+                            </MatExpansionPanelSubHeader>
+                        </MatExpansionPanelSummary>
+                        <MatExpansionPanelDetails>
+                            <MatList SingleSelection="true" TwoLine="true">
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Used SQL Server Reporting Services to create several clean, modern, and intuitive reports for various applications.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Some examples of these reports include an employee vacation report and material useage and predicted useage report.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Partook in continuous improvement initiatives to improve current software, fix errors, and create new programs where needed.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Modified existing applications to remove bugs, update UI, or add new features.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Updated existing applications to use modern and scalable frameworks such as MVC, Blazor, Razor Pages, EfCore, and Asp.Net Core.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>These applications included an interactive plant map and a contractor portal.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Designed a human-machine interface with real time data tracking, inputs, and outputs.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>Created an HMI for use with the company's product which included real-time data tracking and the ability to update values on the machine.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                            </MatList>
+                        </MatExpansionPanelDetails>
+                    </MatExpansionPanel>
+                    <MatExpansionPanel Expanded="true">
+                        <MatExpansionPanelSummary Class="bg-dark rounded-top text-light">
+                            <MatExpansionPanelHeader>Food Service Attendant</MatExpansionPanelHeader>
+                            <MatExpansionPanelSubHeader>
+                                August 2017 - September 2019
+                            </MatExpansionPanelSubHeader>
+                        </MatExpansionPanelSummary>
+                        <MatExpansionPanelDetails>
+                            <MatList SingleSelection="true" TwoLine="true">
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Developed and improved communication skills through interactions with customers.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>This has also helped to improve my soft-skills overall</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatListItemText>
+                                        <MatListItemPrimaryText>Displayed strong teamwork skills required for such a job.</MatListItemPrimaryText>
+                                        <MatListItemSecondaryText>I would assist any colleagues when needed and solve disputes between the staff and customers quickly.</MatListItemSecondaryText>
+                                    </MatListItemText>
+                                </MatListItem>
+                            </MatList>
+                        </MatExpansionPanelDetails>
+                    </MatExpansionPanel>
+                </MatAccordion>
+                <div class="pt-2 text-center">
+                    <MatDivider></MatDivider>
+                    <i class="pt-4">Note: Company names will not be shown for privacy reasons.</i>
+                </div>
+            </div>
         </ChildContent>
     </MatTab>
     <MatTab Label="Projects">
@@ -37,7 +133,10 @@
             <span class="oi oi-folder" aria-hidden="true"></span> Projects
         </LabelContent>
         <ChildContent>
-            Third Content
+            <div class="pt-2 text-center">
+                <MatDivider></MatDivider>
+                <h5 class="pt-2">Sorry! Theres nothing here yet :)</h5>
+            </div>
         </ChildContent>
     </MatTab>
 </MatTabGroup>
