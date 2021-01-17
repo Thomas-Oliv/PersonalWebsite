@@ -7,17 +7,24 @@ using System.Threading.Tasks;
 
 namespace PersonalWebsite.Data
 {
-    public class WorkExperience
+    public class WorkExperienceHead
     {
         public int ID { get; set; }
         public string Title { get; set; }
 
-        public string Employer { get; set; }
-
-        public string Description { get; set; }
-
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
+    }
+
+    public class WorkExperience
+    {
+        public int ID { get; set; }
+
+        public int HeadID { get; set; }
+
+        public string Header { get; set; }
+
+        public string Description { get; set; }
     }
 }
