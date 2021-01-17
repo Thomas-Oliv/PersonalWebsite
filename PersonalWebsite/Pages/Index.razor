@@ -1,7 +1,21 @@
 ﻿@page "/"
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
+@using MatBlazor 
+        <div class="row">
+            <div class="col-12 p-3 text-center text-light">
+                <h2>Welcome Visitor!</h2>
+                <hr class="solid mb-1 bg-light">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 list-group">
+                <div class="list-group-item flex-column align-items-start bg-transparent border-0 text-center text-light">
+                    <h5>Class Schedule</h5>
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FToronto&amp;src=YWcydmV1dmNzYzVrNGthcXBzdjdzcDdlMDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23F4511E&amp;color=%23009688&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" style="border-width:0" width=100% height=600px frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="list-group-item flex-column align-items-start bg-transparent border-0 text-center text-light">
+                    <h5>Weather for Waterloo Region</h5>
+                    <iframe src="https://www.meteoblue.com/en/weather/widget/daily/waterloo_canada_6176823?geoloc=fixed&days=7&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=monochrome&pictoicon=0&pictoicon=1&maxtemperature=0&maxtemperature=1&mintemperature=0&mintemperature=1&windspeed=0&windspeed=1&windgust=0&windgust=1&winddirection=0&winddirection=1&uv=0&uv=1&humidity=0&humidity=1&precipitation=0&precipitation=1&precipitationprobability=0&precipitationprobability=1&spot=0&spot=1&pressure=0&pressure=1&layout=dark" frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 100%; height: 600px"></iframe>
+                </div>
+            </div>
+        </div>
 

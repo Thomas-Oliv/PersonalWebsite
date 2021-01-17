@@ -1,43 +1,90 @@
 ﻿@page "/about"
 @using MatBlazor
+@using Blazorise
 @using Data
 @using Microsoft.Extensions.Configuration
 @inject IDataAccess _data
 @inject IConfiguration _config
 
-<MatTabGroup>
-    <MatTab>
-        <LabelContent>
-            <span class="oi oi-person" aria-hidden="true"></span> About Me
-        </LabelContent>
-        <ChildContent>
-            Primary Content
-        </ChildContent>
-    </MatTab>
-    <MatTab  >
-        <LabelContent >
-            <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
-        </LabelContent>
-        <ChildContent>
-            @if (experiences.Count > 0)
-            {
-                foreach (var experience in experiences)
-                {
-                    <p>Experience.Title</p>
-                }
-            }
-            else
-            {
-                <h2>No work experiences found</h2>
-            }
-        </ChildContent>
-    </MatTab>
-    <MatTab Label="Projects">
-        <LabelContent>
-            <span class="oi oi-folder" aria-hidden="true"></span> Projects
-        </LabelContent>
-        <ChildContent>
-            Third Content
-        </ChildContent>
-    </MatTab>
-</MatTabGroup>
+<MatThemeProvider Theme="@DefaultTheme">
+    <MatTabGroup Class="text-light">
+        <MatTab>
+            <LabelContent>
+                <div class="text-light">
+                    <span class="oi oi-person" aria-hidden="true"></span> About Me
+                </div>
+            </LabelContent>
+            <ChildContent>
+                <div class="row pt-3">
+                    <div class="col-12 text-center">
+                        <MatDivider></MatDivider>
+                        <h5 class="pt-2">Sorry! Theres nothing here yet :)</h5>
+                    </div>
+                </div>
+            </ChildContent>
+        </MatTab>
+        <MatTab>
+            <LabelContent>
+                <div class="text-light">
+                    <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
+                </div>
+
+            </LabelContent>
+            <ChildContent>
+                <div class="row pt-3">
+                    <div class="col-12 pb-2">
+                        <MatDivider></MatDivider>
+                    </div>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-12 list-group ">
+                        @foreach (var item in head)
+                        {
+                            <div class="list-group-item flex-column align-items-start bg-transparent border-light">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class=""><b>@item.Title</b></h5>
+                                    <small>@item.StartDate.ToString("MMM yyyy") - @(item.EndDate.Year == 1 ? "Present" : item.EndDate.ToString("MMM yyyy"))</small>
+                                </div>
+                                <div class="ml-4">
+                                    <dl>
+                                        @foreach (var entry in experiences.Where(o => o.HeadID == item.ID))
+                                        {
+                                            <dt>
+                                                @entry.Header
+                                            </dt>
+                                            <dd class="ml-2">
+                                                @entry.Description
+                                            </dd>
+                                        }
+                                    </dl>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <MatDivider></MatDivider>
+                        <i>Note: Company names will not be shown for privacy reasons.</i>
+                    </div>
+                </div>
+            </ChildContent>
+        </MatTab>
+        <MatTab Label="Projects">
+            <LabelContent>
+                <div class="text-light">
+                    <span class="oi oi-folder" aria-hidden="true"></span> Projects
+                </div>
+            </LabelContent>
+            <ChildContent>
+                <div class="row pt-3">
+                    <div class="col-12 text-center">
+                        <MatDivider></MatDivider>
+                        <h5 class="pt-2">Sorry! Theres nothing here yet :)</h5>
+                    </div>
+                </div>
+            </ChildContent>
+        </MatTab>
+    </MatTabGroup>
+</MatThemeProvider>
+
