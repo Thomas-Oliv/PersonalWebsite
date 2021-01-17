@@ -1,17 +1,17 @@
 ﻿@page "/about"
 @using MatBlazor
-@using Blazorise 
+@using Blazorise
 @using Data
 @using Microsoft.Extensions.Configuration
 @inject IDataAccess _data
 @inject IConfiguration _config
 
 <MatThemeProvider Theme="@DefaultTheme">
-    <MatTabGroup Class="text-light ">
+    <MatTabGroup Class="text-light">
         <MatTab>
             <LabelContent>
                 <div class="text-light">
-                    <span class="oi oi-person text-light" aria-hidden="true"></span> About Me
+                    <span class="oi oi-person" aria-hidden="true"></span> About Me
                 </div>
             </LabelContent>
             <ChildContent>
@@ -26,8 +26,9 @@
         <MatTab>
             <LabelContent>
                 <div class="text-light">
-                    <span class="oi oi-briefcase text-light" aria-hidden="true"></span> Work Experience
+                    <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
                 </div>
+
             </LabelContent>
             <ChildContent>
                 <div class="row pt-3">
@@ -36,97 +37,29 @@
                     </div>
                 </div>
                 <div class="row pb-3">
-                    <div class="col-12 list-group">
-                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5><b>.Net/C# Software Developer</b></h5>
-                                <small>September 2020 - December 2020</small>
+                    <div class="col-12 list-group ">
+                        @foreach (var item in head)
+                        {
+                            <div class="list-group-item flex-column align-items-start bg-transparent border-light">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class=""><b>@item.Title</b></h5>
+                                    <small>@item.StartDate.ToString("MMM yyyy") - @(item.EndDate.Year == 1 ? "Present" : item.EndDate.ToString("MMM yyyy"))</small>
+                                </div>
+                                <div class="ml-4">
+                                    <dl>
+                                        @foreach (var entry in experiences.Where(o => o.HeadID == item.ID))
+                                        {
+                                            <dt>
+                                                @entry.Header
+                                            </dt>
+                                            <dd class="ml-2">
+                                                @entry.Description
+                                            </dd>
+                                        }
+                                    </dl>
+                                </div>
                             </div>
-                            <div class="ml-4">
-                                <dl>
-                                    <dt>
-                                        Managed and coordinated ERP data migration and implementation.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Worked with colleagues in collecting, structuring, and organizing data for migration.
-                                    </dd>
-                                    <dt>
-                                        Researched and developed an industrial data logging device.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Using a descision matrix, my colleague and I determined the most optimal design for a PLC data collection module and presented our findings to management for approval.
-                                    </dd>
-                                    <dt>
-                                        Designed several C# applications for use within the ERP system.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        These applications included an API which allowed us to create a custom data migration tool. Customizations were also made to the ERP system to suit the Company's needs.
-                                    </dd>
-                                    <dt>
-                                        Created dozens of reports using SSRS.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Designed custom reports with complex queries for use within the ERP system such as PO forms, CUSMA reports, and inventory management.
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5><b>.Net/C# Software Developer</b></h5>
-                                <small>January 2020 - May 2020</small>
-                            </div>
-                            <div class="ml-4">
-                                <dl>
-                                    <dt>
-                                        Used SQL Server Reporting Services to create several clean, modern, and intuitive reports for various applications.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Some examples of these reports include an employee vacation report and material useage and predicted useage report.
-                                    </dd>
-                                    <dt>
-                                        Partook in continuous improvement initiatives to improve current software, fix errors, and create new programs where needed.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Modified existing applications to remove bugs, update UI, or add new features.
-                                    </dd>
-                                    <dt>
-                                        Updated existing applications to use modern and scalable frameworks such as MVC, Blazor, Razor Pages, EfCore, and Asp.Net Core.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        These applications included an interactive plant map and a contractor portal.
-                                    </dd>
-                                    <dt>
-                                        Designed a human-machine interface with real time data tracking, inputs, and outputs.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        Created an HMI for use with the company's product which included real-time data tracking and the ability to update values on the machine.
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5><b>Food Service Attendant</b></h5>
-                                <small>August 2017 - September 2019</small>
-                            </div>
-                            <div class="ml-4">
-                                <dl>
-                                    <dt>
-                                        Developed and improved communication skills through interactions with customers.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        This has also helped to improve my soft-skills overall
-                                    </dd>
-                                    <dt>
-                                        Displayed strong teamwork skills required for such a job.
-                                    </dt>
-                                    <dd class="ml-1">
-                                        I would assist any colleagues when needed and solve disputes between the staff and customers quickly.
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div class="row">
@@ -140,9 +73,9 @@
         <MatTab Label="Projects">
             <LabelContent>
                 <div class="text-light">
-                    <span class="oi oi-folder text-light" aria-hidden="true"></span> Projects
+                    <span class="oi oi-folder" aria-hidden="true"></span> Projects
                 </div>
-</LabelContent>
+            </LabelContent>
             <ChildContent>
                 <div class="row pt-3">
                     <div class="col-12 text-center">
