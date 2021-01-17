@@ -7,10 +7,12 @@
 @inject IConfiguration _config
 
 <MatThemeProvider Theme="@DefaultTheme">
-    <MatTabGroup>
+    <MatTabGroup Class="text-light ">
         <MatTab>
             <LabelContent>
-                <span class="oi oi-person" aria-hidden="true"></span> About Me
+                <div class="text-light">
+                    <span class="oi oi-person text-light" aria-hidden="true"></span> About Me
+                </div>
             </LabelContent>
             <ChildContent>
                 <div class="row pt-3">
@@ -23,7 +25,9 @@
         </MatTab>
         <MatTab>
             <LabelContent>
-                <span class="oi oi-briefcase" aria-hidden="true"></span> Work Experience
+                <div class="text-light">
+                    <span class="oi oi-briefcase text-light" aria-hidden="true"></span> Work Experience
+                </div>
             </LabelContent>
             <ChildContent>
                 <div class="row pt-3">
@@ -32,10 +36,10 @@
                     </div>
                 </div>
                 <div class="row pb-3">
-                    <div class="col-12 list-group ">
-                        <div class="list-group-item flex-column align-items-start">
+                    <div class="col-12 list-group">
+                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class=""><b>.Net/C# Software Developer</b></h5>
+                                <h5><b>.Net/C# Software Developer</b></h5>
                                 <small>September 2020 - December 2020</small>
                             </div>
                             <div class="ml-4">
@@ -67,9 +71,9 @@
                                 </dl>
                             </div>
                         </div>
-                        <div class="list-group-item flex-column align-items-start">
+                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class=""><b>.Net/C# Software Developer</b></h5>
+                                <h5><b>.Net/C# Software Developer</b></h5>
                                 <small>January 2020 - May 2020</small>
                             </div>
                             <div class="ml-4">
@@ -101,9 +105,9 @@
                                 </dl>
                             </div>
                         </div>
-                        <div class="list-group-item flex-column align-items-start">
+                        <div class="list-group-item flex-column align-items-start bg-transparent border-light">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class=""><b>Food Service Attendant</b></h5>
+                                <h5><b>Food Service Attendant</b></h5>
                                 <small>August 2017 - September 2019</small>
                             </div>
                             <div class="ml-4">
@@ -135,8 +139,10 @@
         </MatTab>
         <MatTab Label="Projects">
             <LabelContent>
-                <span class="oi oi-folder" aria-hidden="true"></span> Projects
-            </LabelContent>
+                <div class="text-light">
+                    <span class="oi oi-folder text-light" aria-hidden="true"></span> Projects
+                </div>
+</LabelContent>
             <ChildContent>
                 <div class="row pt-3">
                     <div class="col-12 text-center">

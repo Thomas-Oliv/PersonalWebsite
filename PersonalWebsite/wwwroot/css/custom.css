@@ -10,3 +10,9 @@
 .border-default-color {
     border: rgb(0, 107, 201);
 }
+.background-default-img {
+    background-image: url("/Images/bg3.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
